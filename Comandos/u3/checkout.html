@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>git checkout</title>
+    <link rel="stylesheet" href="../../CSS/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="../../index.html">Volver al temario</a></h1>
+            <h1>git checkout</h1>
+        </nav>
+    </header>
+    <main>
+        <article>
+            DESCRIPTION <br><br>
+
+            Updates files in the working tree to match the version in the index or the specified tree. If no pathspec was given, git checkout will also update HEAD to set the specified branch as the current branch. <br><br>
+
+            git checkout [(branch)] <br><br>
+
+                To prepare for working on (branch), switch to it by updating the index and the files in the working tree, and by pointing HEAD at the branch. Local modifications to the files in the working tree are kept, so that they can be committed to the (branch). <br><br>
+
+                If (branch) is not found but there does exist a tracking branch in exactly one remote (call it (remote)) with a matching name and --no-guess is not specified, treat as equivalent to
+
+                $ git checkout -b (branch) --track (remote)/(branch) <br><br>
+
+                You could omit (branch), in which case the command degenerates to "check out the current branch", which is a glorified no-op with rather expensive side-effects to show only the tracking information, if exists, for the current branch. <br><br>
+            git checkout -b|-B (new_branch) [(start point)] <br><br>
+
+                Specifying -b causes a new branch to be created as if git-branch[1] were called and then checked out. In this case you can use the --track or --no-track options, which will be passed to git branch. As a convenience, --track without -b implies branch creation; see the description of --track below. <br><br>
+
+                If -B is given, (new_branch) is created if it doesn’t exist; otherwise, it is reset. This is the transactional equivalent of <br><br>
+
+                $ git branch -f (branch) [(start point)]
+                $ git checkout (branch) <br><br>
+
+                that is to say, the branch is not reset/created unless "git checkout" is successful. <br><br>
+            git checkout --detach [(branch)]
+            git checkout [--detach] (commit) <br><br>
+
+                Prepare to work on top of (commit), by detaching HEAD at it (see "DETACHED HEAD" section), and updating the index and the files in the working tree. Local modifications to the files in the working tree are kept, so that the resulting working tree will be the state recorded in the commit plus the local modifications. <br><br>
+
+                When the (commit) argument is a branch name, the --detach option can be used to detach HEAD at the tip of the branch (git checkout (branch) would check out that branch without detaching HEAD). <br><br>
+
+                Omitting (branch) detaches HEAD at the tip of the current branch. <br><br>
+            git checkout [-f|--ours|--theirs|-m|--conflict=(style)] [(tree-ish)] [--] (pathspec)…​
+            git checkout [-f|--ours|--theirs|-m|--conflict=(style)] [(tree-ish)] --pathspec-from-file=(file) [--pathspec-file-nul] <br><br>
+
+                Overwrite the contents of the files that match the pathspec. When the (tree-ish) (most often a commit) is not given, overwrite working tree with the contents in the index. When the (tree-ish) is given, overwrite both the index and the working tree with the contents at the (tree-ish). <br><br>
+
+                The index may contain unmerged entries because of a previous failed merge. By default, if you try to check out such an entry from the index, the checkout operation will fail and nothing will be checked out. Using -f will ignore these unmerged entries. The contents from a specific side of the merge can be checked out of the index by using --ours or --theirs. With -m, changes made to the working tree file can be discarded to re-create the original conflicted merge result. <br><br>
+            git checkout (-p|--patch) [(tree-ish)] [--] [(pathspec)…​] <br><br>
+
+                This is similar to the previous mode, but lets you use the interactive interface to show the "diff" output and choose which hunks to use in the result. See below for the description of --patch option.
+        </article>
+    </main>
+</body>
+</html>

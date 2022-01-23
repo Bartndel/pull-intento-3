@@ -1,0 +1,8 @@
+Mi nombre es Gio
+
+Soy estudiante de programacion, en el 2022. 
+Estoy creando este documento para practicar ejercicios de git.
+
+Segunda entrada al archivo para hacer ejercicios
+
+Hoy se muy poco de html y css, con conocimientos basicos en git y aun mas basicos en js.

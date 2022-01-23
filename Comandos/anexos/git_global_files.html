@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>git global files</title>
+    <link rel="stylesheet" href="../../CSS/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="../config.html">regresar a "git global"</a></h1>
+            <h1>git global files</h1>
+        </nav>
+    </header>
+    <main>
+        <article>
+            FILES <br><br>
+
+            If not set explicitly with --file, there are four files where git config will search for configuration options: <br><br>
+            
+            $(prefix)/etc/gitconfig <br><br>
+            
+                System-wide configuration file.
+            $XDG_CONFIG_HOME/git/config <br><br>
+            
+                Second user-specific configuration file. If $XDG_CONFIG_HOME is not set or empty, $HOME/.config/git/config will be used. Any single-valued variable set in this file will be overwritten by whatever is in ~/.gitconfig. It is a good idea not to create this file if you sometimes use older versions of Git, as support for this file was added fairly recently.
+            ~/.gitconfig <br><br>
+            
+                User-specific configuration file. Also called "global" configuration file.
+            $GIT_DIR/config <br><br>
+            
+                Repository specific configuration file.
+            $GIT_DIR/config.worktree <br><br>
+            
+                This is optional and is only searched when extensions.worktreeConfig is present in $GIT_DIR/config.
+            
+            
+        </article>
+    </main>
+</body>
+</html>
